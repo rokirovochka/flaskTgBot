@@ -4,8 +4,7 @@ import time
 from flask import Flask, request
 import os
 
-TOKEN = os.getenv(TOKEN)
-
+TOKEN = os.environ.get('TOKEN')
 requests.post(f"https://api.telegram.org/bot{TOKEN}/setWebhook" , json={'url': 'https://flask-tg-bot.onrender.com'})
 
 
