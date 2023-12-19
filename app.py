@@ -25,10 +25,10 @@ def receive_update():
     if request.method == 'POST':
         #print(request.json)
         chat_id = request.json['message']['chat']['id']
-	api_result = requests.get('http://api.weatherstack.com/current', params)
-	api_response = api_result.json()
-	text = u'Current temperature in %s is %d℃' % (api_response['location']['name'], api_response['current']['temperature'])
-	send_message(chat_id, text)
+        api_result = requests.get('http://api.weatherstack.com/current', params)
+        api_response = api_result.json()
+        text = u'Current temperature in %s is %d℃' % (api_response['location']['name'], api_response['current']['temperature'])
+        send_message(chat_id, text)
     return {'ok':True}
 
 
