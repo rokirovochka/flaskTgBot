@@ -2,12 +2,9 @@
 import requests
 import time
 from flask import Flask, request
+import os
 
-
-
-TOKEN = mySecrets.TOKEN
-
-
+TOKEN = os.getenv(TOKEN)
 
 requests.post(f"https://api.telegram.org/bot{TOKEN}/setWebhook" , json={'url': 'https://flask-tg-bot.onrender.com'})
 
